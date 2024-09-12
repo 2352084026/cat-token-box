@@ -178,7 +178,7 @@ export class MintCommand extends BoardcastCommand {
             );
             return;
           } else {
-            throw new Error('unknown minter!');
+            throw new Error('unkown minter!');
           }
         }
 
@@ -191,7 +191,7 @@ export class MintCommand extends BoardcastCommand {
     }
   }
 
-  async merge(metadata: TokenMetadata, address: btc.Address) {
+  async merge(metadata: TokenMetadata, address: btc.Addres) {
     const res = await getTokens(
       this.configService,
       this.spendService,
