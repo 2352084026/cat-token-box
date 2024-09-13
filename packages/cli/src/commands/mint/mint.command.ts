@@ -197,7 +197,7 @@ export class MintCommand extends BoardcastCommand {
     }
   }
 
-  async merge(metadata: TokenMetadata, address: btc.Address) {
+  async merge(metadata: TokenMetadata, addres: btc.Address) {
     const res = await getTokens(
       this.configService,
       this.spendService,
