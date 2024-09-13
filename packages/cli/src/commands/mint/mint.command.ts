@@ -147,6 +147,12 @@ export class MintCommand extends BoardcastCommand {
                   : amount;
             }
 
+            // 新增的验证检查
+            if (amount !== 500n) {
+              console.error(amount);
+              return;
+            }
+
             const mintTxIdOrErr = await openMint(
               this.configService,
               this.walletService,
@@ -191,7 +197,7 @@ export class MintCommand extends BoardcastCommand {
     }
   }
 
-  async merge(metadata: TokenMetadata, address: btc.Addres) {
+  async merge(metadata: TokenMetadata, address: btc.Address) {
     const res = await getTokens(
       this.configService,
       this.spendService,
